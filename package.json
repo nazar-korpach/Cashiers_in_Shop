@@ -1,0 +1,35 @@
+{
+   "name": "cashiers_in_shop",
+   "version": "1.0.0",
+   "description": "",
+   "main": "dist/app.js",
+   "scripts": {
+      "start": "npm run build && node -r tsconfig-paths/register ./dist/app.js",
+      "build": "tsc",
+      "typeorm": "node -r ts-node/register -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+      "lint": "eslint ./src/**/*.ts",
+		"lint:fix": "eslint --fix ./src/**/*.ts",
+      "migration:run": "npm typeorm migration:run"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/nazar-korpach/Cashiers_in_Shop.git"
+   },
+   "author": "Nazar Korpach",
+   "license": "MIT",
+   "bugs": {
+      "url": "https://github.com/nazar-korpach/Cashiers_in_Shop/issues"
+   },
+   "homepage": "https://github.com/nazar-korpach/Cashiers_in_Shop#readme",
+   "devDependencies": {
+      "@types/node": "^8.0.29",
+      "ts-node": "3.3.0",
+      "typescript": "^4.3.4"
+   },
+   "dependencies": {
+      "pg": "^8.6.0",
+      "sqlite3": "^5.0.2",
+      "tsconfig-paths": "^3.9.0",
+      "typeorm": "^0.2.34"
+   }
+}
