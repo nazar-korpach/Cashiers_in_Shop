@@ -1,4 +1,4 @@
-import { Days } from './days'
+import {Days} from './days';
 
 export interface WorkingDay {
 	day: Days

@@ -1,41 +1,41 @@
-import {Entity, PrimaryGeneratedColumn, Column} from 'typeorm';
-import {Sex, WorkingDay, CashiersPosition} from '@srv/typing';
+import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
+import {CashiersPosition, Sex, WorkingDay} from '@srv/typing';
 
 @Entity()
 export class CashiersEntity {
 	@PrimaryGeneratedColumn()
-	id: number
+	id: number;
 
 	@Column()
-	name: string
+	name: string;
 
 	@Column()
-	surname: string
+	surname: string;
 
 	@Column('enum', {enum: Sex})
-	sex: Sex
+	sex: Sex;
 
 	@Column()
-	age: number
+	age: number;
 
 	@Column()
-	yearOfExperience: number
+	yearOfExperience: number;
 
 	@Column({type: 'text', array: true})
-	previousExperience: string[]
+	previousExperience: string[];
 
 	@Column()
-	workAdress: string
+	workAdress: string;
 
 	@Column()
-	kassaNumber: number
+	kassaNumber: number;
 
 	@Column()
-	salary: number
+	salary: number;
 
 	@Column('enum', {enum: CashiersPosition})
-	position: CashiersPosition
+	position: CashiersPosition;
 
 	@Column({type: 'jsonb'})
-	workingDays: WorkingDay[]
+	workingDays: WorkingDay[];
 }
