@@ -1,11 +1,16 @@
 import {connect} from '@srv/database'
 import {CashiersService} from '@srv/services'
+import {Cashier, Sex, Days, CashiersPosition} from '@srv/typing'
 
 
-class App {
+export class App {
 	private cashiersService = new CashiersService()
 	async start() {
 		await connect()
+	}
+
+	async create(cashier: Cashier) {
+		this.cashiersService.create(cashier);
 	}
 
 	async getTargetCashiers2() {
