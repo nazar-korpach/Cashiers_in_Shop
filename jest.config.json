@@ -1,0 +1,36 @@
+{
+	"preset": "ts-jest",
+	"testEnvironment": "node",
+	"collectCoverage": true,
+	"testMatch": [
+		"**/__test__/**/*.test.ts"
+	],
+	"testPathIgnorePatterns": [
+		"/node_modules/",
+		"./dist/"
+	],
+	"collectCoverageFrom": [
+		"./src/**/*.{ts,js}",
+		"!./src/{config,core,db,messages,migrations,entities,typings,validators}/**",
+		"!./src/{app,index}.ts",
+		"!**/__test__/**"
+	],
+	"coverageThreshold": {
+		"global": {
+			"branches": 75,
+			"functions": 50,
+			"lines": 50,
+			"statements": 50
+		}
+	},
+	"coveragePathIgnorePatterns": [
+        "node_modules",
+		"src/entity",
+		"src/migration"
+	],
+	"coverageProvider": "v8",
+	"setupFiles": ["dotenv/config", "./src/setup.ts"],
+	"moduleNameMapper": {
+		"^@srv/(.*)$": "<rootDir>/src/$1"
+	}
+}

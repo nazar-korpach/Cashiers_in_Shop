@@ -1,12 +1,11 @@
 import {getConnectionManager} from 'typeorm';
-import {CashiersEntity} from '@srv/entity';
 
 export const connect = async () => {
 	const connectionManager = getConnectionManager();
 
 	const connection = connectionManager.create({
 		type: 'postgres',
-		entities: [CashiersEntity],
+		entities: [__dirname + '/../**/**.entity{.ts,.js}'],
 		url: 'postgres://postgres:postgres@localhost/cashiers_in_shop'
 	});
 

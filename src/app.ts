@@ -1,10 +1,11 @@
 import {connect} from '@srv/database'
 import {CashiersService} from '@srv/services'
-import {Cashier, Sex, Days, CashiersPosition} from '@srv/typing'
+import {Cashier} from '@srv/typing'
 
 
 export class App {
 	private cashiersService = new CashiersService()
+
 	async start() {
 		await connect()
 	}
@@ -21,13 +22,15 @@ export class App {
 		return await this.cashiersService.getTargetCashiers1()
 	}
 }
+/*
 async function main() {
 	const app = new App();
 	await app.start()
 	const result1 = await app.getTargetCashiers1();
 	const result2 = await app.getTargetCashiers2();
 	console.log('result 1 is', result1);
-	console.log('result 2 is', result2);
+	// console.log('result 2 is', result2);
 }
 
 main()
+*/

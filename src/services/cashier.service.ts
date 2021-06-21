@@ -1,5 +1,5 @@
 import {In, MoreThan, Raw, getRepository} from 'typeorm';
-import {And, IsOdd} from '@srv/database/operators';
+import {And, IsOdd, Or, ArrContains} from '@srv/database/operators';
 import {CashiersEntity} from '@srv/entity';
 import {dayToIndex} from '@srv/helpers';
 import {Days, Cashier, CashierFindCondition} from '@srv/typing';
@@ -37,7 +37,8 @@ export class CashiersService {
 		const result = await repo.find({
 			where: {
 				yearOfExperience: MoreThan(5),
-				previousExperience: In(['{Silpo}', '{Arsen}'])
+				previousExperience: Or(ArrContains('Silpo'),
+										ArrContains('Arsen'))
 			}
 		});
 		return result;
