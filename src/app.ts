@@ -26,7 +26,7 @@ export class App {
 		return await this.cashiersService.find({});
 	}
 }
-/*
+
 async function main() {
 	const app = new App();
 	await app.start()
@@ -38,5 +38,4 @@ async function main() {
 	console.log('getAllCashiers result is', result2);
 }
 
-main()
-*/
+// main()
