@@ -15,13 +15,13 @@ export interface Cashier {
 }
 
 export interface CashierFindCondition {
-	name: string,
-	surname: string,
-	sex: Sex,
-	age: number,
-	yearOfExperience: number,
-	workAdress: string,
-	kassaNumber: number,
-	salary: number,
-	position: CashiersPosition
+	name?: string,
+	surname?: string,
+	sex?: Sex,
+	age?: number,
+	yearOfExperience?: number,
+	workAdress?: string,
+	kassaNumber?: number,
+	salary?: number,
+	position?: CashiersPosition
 }
