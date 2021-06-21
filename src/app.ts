@@ -10,7 +10,7 @@ export class App {
 		await connect()
 	}
 
-	async create(cashier: Cashier) {
+	async create(cashier: Cashier){
 		this.cashiersService.create(cashier);
 	}
 

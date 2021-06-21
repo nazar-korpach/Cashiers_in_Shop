@@ -1,4 +1,4 @@
-import {Cashier, Sex, Days, CashiersPosition} from '@srv/typing'
+import {Cashier, CashiersPosition, Days, Sex} from '@srv/typing';
 
 export const cashiers: Cashier[] = [
 	{
@@ -337,4 +337,4 @@ export const cashiers: Cashier[] = [
 				endTime: '25:00'
 			}]
 	},
-]
+];

@@ -1,8 +1,8 @@
-import {In, MoreThan, Raw, getRepository} from 'typeorm';
-import {And, IsOdd, Or, ArrContains} from '@srv/database/operators';
+import {MoreThan, Raw, getRepository} from 'typeorm';
+import {And, ArrContains, IsOdd, Or} from '@srv/database/operators';
 import {CashiersEntity} from '@srv/entity';
 import {dayToIndex} from '@srv/helpers';
-import {Days, Cashier, CashierFindCondition} from '@srv/typing';
+import {Cashier, CashierFindCondition, Days} from '@srv/typing';
 
 export class CashiersService {
 	async create(cashier: Cashier): Promise<void>{
@@ -14,12 +14,12 @@ export class CashiersService {
 		const repo = getRepository(CashiersEntity);
 		return await repo.find({
 			where: cashierFindCondition
-		})
+		});
 	}
 
 	async findById(id: number): Promise<CashiersEntity>{
 		const repo = getRepository(CashiersEntity);
-		return await repo.findOne(id)
+		return await repo.findOne(id);
 	}
 
 	async update(id: number, cashier: Cashier): Promise<void>{
@@ -32,25 +32,25 @@ export class CashiersService {
 		await repo.delete(id);
 	}
 
-	async getTargetCashiers1() {
+	async getTargetCashiers1(): Promise<CashiersEntity[]> {
 		const repo = getRepository(CashiersEntity);
 		const result = await repo.find({
 			where: {
 				yearOfExperience: MoreThan(5),
 				previousExperience: Or(ArrContains('Silpo'),
-										ArrContains('Arsen'))
+					ArrContains('Arsen'))
 			}
 		});
 		return result;
 	}
 
-	async getTargetCashiers2() {
+	async getTargetCashiers2(): Promise<CashiersEntity[]> {
 		const repo = getRepository(CashiersEntity);
 		const dayID = dayToIndex(Days.Monday);
 		const result = await repo.find({
 			where: {
 				workingDays: And(Raw(days => `${days} ->${dayID}->>'endTime' = '07:00'`) ,
-								Raw(days => `${days} ->${dayID}->>'startTime' = '23:00'`)), 
+					Raw(days => `${days} ->${dayID}->>'startTime' = '23:00'`)),
 
 				kassaNumber: IsOdd(),
 				workAdress: 'Shevchnca st, 100'
