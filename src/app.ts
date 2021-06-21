@@ -26,15 +26,16 @@ export class App {
 		return await this.cashiersService.find({});
 	}
 }
-/*
+
 async function main() {
 	const app = new App();
 	await app.start()
 	const result1 = await app.getTargetCashiers1();
 	const result2 = await app.getTargetCashiers2();
-	console.log('result 1 is', result1);
-	// console.log('result 2 is', result2);
+	const result3 = await app.getAllCashiers();
+	console.log('getTargetCashiers1 result is', result1);
+	console.log('getTargetCashiers2 result is', result2);
+	console.log('getAllCashiers result is', result2);
 }
 
 main()
-*/

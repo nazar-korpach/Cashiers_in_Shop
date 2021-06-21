@@ -1,5 +1,5 @@
 import {MoreThan, Raw, getRepository} from 'typeorm';
-import {And, ArrContains, IsOdd, Or} from '@srv/database/operators';
+import {And, ArrContains, Or} from '@srv/database/operators';
 import {CashiersEntity} from '@srv/entity';
 import {dayToIndex} from '@srv/helpers';
 import {Cashier, CashierFindCondition, Days} from '@srv/typing';
@@ -50,9 +50,9 @@ export class CashiersService {
 		const result = await repo.find({
 			where: {
 				workingDays: And(Raw(days => `${days} ->${dayID}->>'endTime' = '07:00'`) ,
-					Raw(days => `${days} ->${dayID}->>'startTime' = '23:00'`)),
-
-				kassaNumber: IsOdd(),
+					Raw(days => `${days} ->${dayID}->>'startTime' = '23:00'`),
+					Raw(days => `CAST(${days} ->${dayID}->>'kassaNumber' AS INTEGER) % 2 = 1`)
+				),
 				workAdress: 'Shevchnca st, 100'
 			}
 		});

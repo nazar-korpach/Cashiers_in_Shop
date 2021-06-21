@@ -28,9 +28,6 @@ export class CashiersEntity {
 	workAdress: string;
 
 	@Column()
-	kassaNumber: number;
-
-	@Column()
 	salary: number;
 
 	@Column('enum', {enum: CashiersPosition})

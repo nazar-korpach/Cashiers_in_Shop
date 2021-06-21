@@ -8,7 +8,6 @@ export interface Cashier {
 	yearOfExperience: number,
 	previousExperience: string[],
 	workAdress: string,
-	kassaNumber: number,
 	salary: number,
 	position: CashiersPosition,
 	workingDays: WorkingDay[]
@@ -21,7 +20,6 @@ export interface CashierFindCondition {
 	age?: number,
 	yearOfExperience?: number,
 	workAdress?: string,
-	kassaNumber?: number,
 	salary?: number,
 	position?: CashiersPosition
 }
