@@ -3,7 +3,6 @@
 		"module": "commonjs",
 		"target": "es2020",
 		"outDir": "dist/",
-		"rootDir": "src/",
 		"allowJs": true,
 		"moduleResolution": "node",
     	"esModuleInterop": true,
@@ -18,5 +17,6 @@
 		"incremental": true,
 		"sourceMap": true
 	},
-	"include": ["./src/**/*"]
+	"include": ["./src/**/*"],
+	"exclude": ["ormconfig.ts"]
 }

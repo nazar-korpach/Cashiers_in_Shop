@@ -26,7 +26,7 @@ describe('new app test', () =>{
 			expect(result).toHaveLength(2);
 		});
 
-		it('should have expected names', () =>{
+		it('should have expected names',async () =>{
 			expect(result[0]).toHaveProperty('name');
 			expect(result[0].name).toBe('Cashier6');
 			expect(result[1]).toHaveProperty('name');
@@ -41,7 +41,7 @@ describe('new app test', () =>{
 			expect(result).toHaveLength(2);
 		});
 
-		it('should have expected names', () =>{
+		it('should have expected names', async () =>{
 			expect(result[0]).toHaveProperty('name');
 			expect(result[0].name).toBe('Cashier1');
 			expect(result[1]).toHaveProperty('name');
@@ -55,7 +55,7 @@ describe('new app test', () =>{
 			result = await app.getAllCashiers();
 			expect(result).toHaveLength(cashiers.length);
 		});
-		it('should have right names', () =>{
+		it('should have right names', async () =>{
 			result.forEach( (cashier, i) =>{
 				expect(cashier.name).toBe(cashiers[i].name);
 			});
