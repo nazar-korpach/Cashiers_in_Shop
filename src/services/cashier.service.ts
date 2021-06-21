@@ -53,7 +53,7 @@ export class CashiersService {
 					Raw(days => `${days} ->${dayID}->>'startTime' = '23:00'`),
 					Raw(days => `CAST(${days} ->${dayID}->>'kassaNumber' AS INTEGER) % 2 = 1`)
 				),
-				workAdress: 'Shevchnca st, 100'
+				workAdress: 'Shevchenko st, 100'
 			}
 		});
 		return result;

@@ -8,7 +8,7 @@ export const cashiers: Cashier[] = [
 		age: 34,
 		yearOfExperience: 2,
 		previousExperience: ['Arsen'],
-		workAdress: 'Shevchnca st, 100',
+		workAdress: 'Shevchenko st, 100',
 		salary: 10000,
 		position: CashiersPosition.senior,
 		workingDays: [
@@ -62,7 +62,7 @@ export const cashiers: Cashier[] = [
 		age: 34,
 		yearOfExperience: 1,
 		previousExperience: ['Silpo'],
-		workAdress: 'Shevchnca st, 100',
+		workAdress: 'Shevchenko st, 100',
 		salary: 10000,
 		position: CashiersPosition.junior,
 		workingDays: [
@@ -116,7 +116,7 @@ export const cashiers: Cashier[] = [
 		age: 34,
 		yearOfExperience: 4,
 		previousExperience: ['7/23'],
-		workAdress: 'Shevchnca st, 100',
+		workAdress: 'Shevchenko st, 100',
 		salary: 10000,
 		position: CashiersPosition.senior,
 		workingDays: [
