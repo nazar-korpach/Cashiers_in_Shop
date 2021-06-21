@@ -48,4 +48,17 @@ describe('new app test', () =>{
 			expect(result[1].name).toBe('Cashier2');
 		});
 	});
+
+	describe('TEST getAllCashiers', () =>{
+		let result: Cashier[];
+		it('should have right length', async () =>{
+			result = await app.getAllCashiers();
+			expect(result).toHaveLength(cashiers.length);
+		});
+		it('should have right names', () =>{
+			result.forEach( (cashier, i) =>{
+				expect(cashier.name).toBe(cashiers[i].name);
+			});
+		});
+	});
 });

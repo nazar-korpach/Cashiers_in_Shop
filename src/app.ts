@@ -21,6 +21,10 @@ export class App {
 	async getTargetCashiers1() {
 		return await this.cashiersService.getTargetCashiers1()
 	}
+
+	async getAllCashiers() {
+		return await this.cashiersService.find({});
+	}
 }
 /*
 async function main() {
